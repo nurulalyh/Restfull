@@ -1,8 +1,8 @@
 package main
 
 import (
-	"api_testing/config"
-	"api_testing/routes"
+	"restfull/config"
+	"restfull/routes"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"

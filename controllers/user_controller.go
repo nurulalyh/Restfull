@@ -3,9 +3,9 @@
 package controllers
 
 import (
-	"api_testing/config"
-	"api_testing/models"
 	"net/http"
+	"restfull/config"
+	"restfull/models"
 	"strconv"
 
 	"github.com/labstack/echo/v4"

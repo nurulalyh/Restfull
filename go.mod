@@ -1,4 +1,4 @@
-module api_testing
+module restfull
 
 go 1.19
 

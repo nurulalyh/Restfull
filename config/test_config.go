@@ -1,8 +1,8 @@
 package config
 
 import (
-	"api_testing/models"
 	"fmt"
+	"restfull/models"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"

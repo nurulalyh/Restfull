@@ -3,8 +3,8 @@
 package controllers
 
 import (
-	"api_testing/config"
-	"api_testing/models"
+	"restfull/config"
+	"restfull/models"
 	"net/http"
 	"strconv"
 

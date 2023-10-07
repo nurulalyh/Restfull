@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"api_testing/controllers"
+	"restfull/controllers"
 
 	"github.com/labstack/echo/v4"
 )

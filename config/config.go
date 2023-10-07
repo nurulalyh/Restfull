@@ -1,7 +1,7 @@
 package config
 
 import (
-	"api_testing/models"
+	"restfull/models"
 	"fmt"
 
 	"github.com/jinzhu/gorm"
