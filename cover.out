@@ -1,0 +1,14 @@
+mode: set
+test/features/users/service/service.go:16.129,22.2 1 1
+test/features/users/service/service.go:24.74,26.16 2 1
+test/features/users/service/service.go:26.16,28.3 1 1
+test/features/users/service/service.go:30.2,32.16 3 1
+test/features/users/service/service.go:32.16,34.3 1 0
+test/features/users/service/service.go:36.2,36.20 1 1
+test/features/users/service/service.go:39.89,41.16 2 1
+test/features/users/service/service.go:41.16,42.49 1 0
+test/features/users/service/service.go:42.49,44.4 1 0
+test/features/users/service/service.go:45.3,45.43 1 0
+test/features/users/service/service.go:48.2,50.22 2 1
+test/features/users/service/service.go:50.22,52.3 1 0
+test/features/users/service/service.go:54.2,58.22 4 1

@@ -1,16 +1,33 @@
 package main
 
 import (
-	"restfull/config"
-	"restfull/routes"
+	"fmt"
+	"test/configs"
+	"test/features/users/data"
+	"test/features/users/handler"
+	"test/features/users/service"
+	"test/helper"
+	"test/routes"
+	"test/utils/database"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
-	config.InitDB()
 	e := echo.New()
+	var config = configs.InitConfig()
+
+	db := database.InitDB(*config)
+	database.Migrate(db)
+
+	userModel := data.New(db)
+	generator := helper.NewGenerator()
+	jwtInterface := helper.New(config.Secret, config.RefreshSecret)
+	userServices := service.New(userModel, generator, jwtInterface)
+
+	userControll := handler.NewHandler(userServices)
+
 
 	e.Pre(middleware.RemoveTrailingSlash())
 
@@ -20,8 +37,7 @@ func main() {
 			Format: "method=${method}, uri=${uri}, status=${status}, time=${time_rfc3339}\n",
 		}))
 
-	routes.SetUserRoutes(e)
-	routes.SetBookRoutes(e)
+	routes.RouteUser(e, userControll, *config)
 
-	e.Logger.Fatal(e.Start(":8000"))
+	e.Logger.Fatal(e.Start(fmt.Sprintf(":%d", config.ServerPort)).Error())
 }
