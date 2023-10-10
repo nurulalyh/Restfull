@@ -27,7 +27,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/task-ci-cd:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/imgnurul:latest
       - 
         name: connect ssh
         uses: appleboy/ssh-action@v0.1.9
@@ -39,7 +39,7 @@ jobs:
           script: |
             docker stop ${{ secrets.CNAME }}
             docker rm ${{ secrets.CNAME }}
-            docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/task-ci-cd
+            docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/imgnurul
             docker run docker run --name ${{ secrets.CNAME }} 
             -p 8000:8000 
             -d 
@@ -50,4 +50,4 @@ jobs:
             -e DBPASS=${{secrets.DBPASS}}
             -e SECRET=${{secrets.JWTSECRET}} 
             -e REFSECRET=${{secrets.REFSECRET}} 
-            -e SERVER=8000 ${{ secrets.DOCKERHUB_USERNAME }}/task-ci-cd
+            -e SERVER=8000 ${{ secrets.DOCKERHUB_USERNAME }}/imgnurul
