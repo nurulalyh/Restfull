@@ -43,7 +43,7 @@ jobs:
           script: |
             docker stop ${{ secrets.CNAME }}
             docker rm ${{ secrets.CNAME }}
-            docker rmi be16prj:alpine
+            docker rmi task-ci-cd:alpine
             docker run docker run --name ${{ secrets.CNAME }} 
             -p 8000:8000 
             -d 
