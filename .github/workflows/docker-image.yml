@@ -54,4 +54,4 @@ jobs:
             -e DBPASS=${{secrets.DBPASS}}
             -e SECRET=${{secrets.JWTSECRET}} 
             -e REFSECRET=${{secrets.REFSECRET}} 
-            -e SERVER=8000 ${{ secrets.DOCKERHUB_USERNAME }}/didamysql
+            -e SERVER=8000 ${{ secrets.DOCKERHUB_USERNAME }}/task-ci-cd
