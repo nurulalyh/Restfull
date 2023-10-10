@@ -3,10 +3,6 @@ name: Docker Image CI
 on:
   push:
     branches: "master"
-  # push:
-  #   branches: [ "master" ]
-  # pull_request:
-  #   branches: [ "master" ]
 
 jobs:
   build:
@@ -43,7 +39,7 @@ jobs:
           script: |
             docker stop ${{ secrets.CNAME }}
             docker rm ${{ secrets.CNAME }}
-            docker rmi task-ci-cd:alpine
+            docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/task-ci-cd
             docker run docker run --name ${{ secrets.CNAME }} 
             -p 8000:8000 
             -d 
